@@ -1,0 +1,15 @@
+[
+{
+  "modid": "SupernaturalBeings",
+  "name": "Supernatural Beings",
+  "description": "A mod that adds the ability for you to become a supernatural being. Like Vampires, Werewolves, etc...",
+  "version": "1.0",
+  "mcversion": "1.10.2",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["MrNightFall"],
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
