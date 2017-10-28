@@ -26,11 +26,13 @@ public class SupernaturalBeings {
 	
 	@EventHandler
 	public void init(FMLInitializationEvent event) {
+
 		Utils.getLogger().info("Initialize");
 	}
 	
 	@EventHandler
 	public void init(FMLPostInitializationEvent event) {
+
 		Utils.getLogger().info("Post Initialize");
 	}
 	
