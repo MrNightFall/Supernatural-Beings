@@ -1,5 +1,7 @@
 package mrnightfall.supernaturalbeings;
 
+import java.io.File;
+
 import mrnightfall.supernaturalbeings.proxy.CommonProxy;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -16,9 +18,23 @@ public class SupernaturalBeings {
 	
 	@SidedProxy(serverSide = Reference.SERVER_PROXY_CLASS, clientSide = Reference.Client_PROXY_CLASS)
 	public static CommonProxy proxy;
-
+	
+	private static File configDir;
+	
+	public static File getConfigDir() {
+		return configDir;
+	}
+	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
+		//Configuration
+		configDir = new File(event.getModConfigurationDirectory() + "/" + Reference.MODID);
+		configDir.mkdirs();
+		ConfigHandler.init(new File(configDir.getPath(), Reference.MODID + ".cfg"));
+		
+		
+		//other
+		
 		Utils.getLogger().info("Pre Initialize");
 		
 		proxy.registerRenders();
