@@ -2,7 +2,9 @@ package mrnightfall.supernaturalbeings;
 
 import java.io.File;
 
+import mrnightfall.supernaturalbeings.init.ModFluids;
 import mrnightfall.supernaturalbeings.proxy.CommonProxy;
+import mrnightfall.supernaturalbeings.world.BiomeRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -32,6 +34,9 @@ public class SupernaturalBeings {
 		configDir.mkdirs();
 		ConfigHandler.init(new File(configDir.getPath(), Reference.MODID + ".cfg"));
 		
+		//MISC
+		ModFluids.register();
+		BiomeRegistry.addComponents();
 		
 		//other
 		
@@ -42,13 +47,17 @@ public class SupernaturalBeings {
 	
 	@EventHandler
 	public void init(FMLInitializationEvent event) {
-
+		
+		BiomeRegistry.registerComponents();
+		
 		Utils.getLogger().info("Initialize");
 	}
 	
 	@EventHandler
 	public void init(FMLPostInitializationEvent event) {
-
+		
+		BiomeRegistry.addBiomesToWorld();
+		
 		Utils.getLogger().info("Post Initialize");
 	}
 	

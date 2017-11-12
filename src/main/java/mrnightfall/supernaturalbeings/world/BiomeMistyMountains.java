@@ -10,8 +10,8 @@ public class BiomeMistyMountains extends Biome {
 	public BiomeMistyMountains(BiomeProperties properties) {
 		super(properties);
 		this.topBlock = Blocks.STONE.getDefaultState();
-		this.fillerBlock = Blocks.STONE.getDefaultState();
-		this.spawnableCreatureList.add(new SpawnListEntry(EntityWolf.class,100, 60, 60));
+		this.fillerBlock = Blocks.SNOW.getDefaultState();
+		this.spawnableCreatureList.add(new SpawnListEntry(EntityWolf.class,100, 20, 20));
 
 	}
 	
